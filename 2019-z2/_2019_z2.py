@@ -1,4 +1,4 @@
-import os   #cls do czyszczenia ekranu
+import subprocess   #cls do czyszczenia ekranu
 
 def odczyt():
 
@@ -47,7 +47,7 @@ def kasowanie(list):
 
     n = int(input("Podaj numer linii do usunięcia: "))
 
-    os.system("cls")    #czyszczenie konsoli
+    subprocess.call("cls", shell = True)   #czyszczenie konsoli
 
     t = list.pop(n-1)
     
@@ -63,7 +63,7 @@ def kasowanie(list):
 
 while True:
 
-    os.system("cls")
+    subprocess.call("cls", shell = True)
 
     print("Wybierz czynność, podając numer przy niej.\n"
           "1. Pokaż liste.\n"
