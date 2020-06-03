@@ -66,15 +66,19 @@ while True:
     os.system("cls")
 
     print("Wybierz czynność, podając numer przy niej.\n"
-          "1. Dopisz do listy.\n"
-          "2. Usuń z listy.\n"
-          "3. Wyszukaj daną osobę lub numer")
+          "1. Pokaż liste.\n"
+          "2. Dopisz do listy.\n"
+          "3. Usuń z listy.\n"
+          "4. Wyszukaj daną osobę lub numer")
 
     try:
         w = int(input("Numer operacji do wykonania: "))
 
-        if w > 0 and w < 4:
-            break
+        if w  == 1:
+            lista = odczyt()
+            for i in lista:
+                print(i)
+            
 
     except Exception as e:
         print("Błąd:",e)
