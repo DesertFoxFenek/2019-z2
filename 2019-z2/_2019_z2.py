@@ -30,7 +30,7 @@ def zapis(tekst):
         plik = open("lista.txt","a")
         plik.writelines(tekst)
         plik.close()
-        t = "Dopisano pomyślnie"
+        t = "Dopisano pomyślnie"   #trzeba zrobić warynek żeby nie można było woisać jako nr. telefonu dowolnego znaku..
 
         return t
 
