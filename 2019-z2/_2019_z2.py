@@ -1,4 +1,5 @@
 import os   #cls do czyszczenia ekranu
+#eloooooooooooooooo
 
 def odczyt():
 
@@ -9,7 +10,7 @@ def odczyt():
         return tekst
 
     except Exception as e:
-
+        
         return e
 
 #do poprawy, wyszukiwanie nie całości a części ciągu znaków
