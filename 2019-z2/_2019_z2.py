@@ -25,7 +25,7 @@ def wyszukaj(im,nr,list):
 
     return n
 
-def zapis(tekst):
+def zapis(tekst):   #\n dodać
     try:
         plik = open("lista.txt","a")
         plik.writelines(tekst)
@@ -80,12 +80,4 @@ while True:
             
     except Exception as e:
         print("Błąd:",e)
-
-input("co kolwiek")
-
-
-a = input(str("Imie: "))
-b = input(str("Numer telefonu: "))
-t = (a+"\t"+b)
-print(zapis(t))
 
