@@ -1,5 +1,4 @@
 import os   #cls do czyszczenia ekranu
-#eloooooooooooooooo
 
 def odczyt():
 
