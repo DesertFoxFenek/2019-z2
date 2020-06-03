@@ -38,7 +38,6 @@ def zapis(tekst):
 
         return e
 
-
 def kasowanie(list):
     
     l = len(list)
@@ -63,7 +62,7 @@ def kasowanie(list):
 
 while True:
 
-    subprocess.call("cls", shell = True)
+    #subprocess.call("cls", shell = True)
 
     print("Wybierz czynność, podając numer przy niej.\n"
           "1. Pokaż liste.\n"
@@ -79,7 +78,6 @@ while True:
             for i in lista:
                 print(i)
             
-
     except Exception as e:
         print("Błąd:",e)
 
