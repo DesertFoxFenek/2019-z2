@@ -4,7 +4,7 @@ def odczyt():
 
     try:
         tekst = []
-        tekst = open("C:/Users/doman/Documents/Programy Komputerowe/2019-2/lista.txt").readlines()  #scieżka bezwzględna gdzie u mnie plik ten występuje
+        tekst = open("lista.txt").readlines()  #scieżka bezwzględna gdzie u mnie plik ten występuje
 
         return tekst
 
@@ -27,7 +27,7 @@ def wyszukaj(im,nr,list):
 
 def zapis(tekst):
     try:
-        plik = open("C:/Users/doman/Documents/Programy Komputerowe/2019-2/lista.txt","a")
+        plik = open("lista.txt","a")
         plik.writelines(tekst)
         plik.close()
         t = "Dopisano pomyślnie"
@@ -52,7 +52,7 @@ def kasowanie(list):
     t = list.pop(n-1)
     
     try:
-        plik = open("C:/Users/doman/Documents/Programy Komputerowe/2019-2/lista.txt","w")
+        plik = open("lista.txt","w")
         plik.writelines(list)
         plik.close()
         print ("Skasowano",t)
