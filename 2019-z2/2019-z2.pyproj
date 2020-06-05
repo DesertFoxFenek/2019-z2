@@ -7,11 +7,11 @@
     <StartupFile>_2019_z2.py</StartupFile>
     <SearchPath>
     </SearchPath>
-    <WorkingDirectory>.reyy45y5545</WorkingDirectory>
+    <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>2019-z2</Name>
     <RootNamespace>2019-z2</RootNamespace>
-    <InterpreterId>Global|PythonCore|3.8-32</InterpreterId>
+    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -23,7 +23,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="_2019_z2.py" />
+    <Resource Include="_2019_z2.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.7" />

@@ -77,7 +77,19 @@ while True:
             lista = odczyt()
             for i in lista:
                 print(i)
-            
+        #coś próbuje od tąd
+        elif w == 2 :
+            x = input(str('wpisz imię '))
+            y = input(str('wpisz numer telefonu'))
+            lista = zapis(x)
+            lista = zapis(y)
+            print('pomyślnie dopisano do listy')
+
+             
+        #do tąd 
+        #przez przypadek dodałem do listy 2 osoby i dwa numery trzeba je usunąć !!!
+
+
     except Exception as e:
         print("Błąd:",e)
 
