@@ -1,4 +1,5 @@
-import subprocess   #cls do czyszczenia ekranu
+import os   #cls do czyszczenia ekranu
+import sys  #do użycia exit(0) w celu zakończeni programu
 
 def odczyt():
 
@@ -8,9 +9,11 @@ def odczyt():
 
         return tekst
 
-    except Exception as e:
+    except Exception as e:  #dodanie jakiej kolwiek informacji o braku pliku
         
-        return e
+        blad = ("Błąd pliku.",e)
+
+        return blad
 
 #do poprawy, wyszukiwanie nie całości a części ciągu znaków
 def wyszukaj(im,nr,list):
@@ -30,6 +33,7 @@ def zapis(tekst):   #\n dodać
         plik = open("lista.txt","a")
         plik.writelines(tekst)
         plik.close()
+
         t = "Dopisano pomyślnie"   #trzeba zrobić warynek żeby nie można było woisać jako nr. telefonu dowolnego znaku..
 
         return t
@@ -46,7 +50,7 @@ def kasowanie(list):
 
     n = int(input("Podaj numer linii do usunięcia: "))
 
-    subprocess.call("cls", shell = True)   #czyszczenie konsoli
+    os.system('cls')   #czyszczenie konsoli
 
     t = list.pop(n-1)
     
@@ -54,7 +58,7 @@ def kasowanie(list):
         plik = open("lista.txt","w")
         plik.writelines(list)
         plik.close()
-        print ("Skasowano",t)
+        print ("Skasowano.",t)
 
     except Exception as e:
 
@@ -62,23 +66,24 @@ def kasowanie(list):
 
 while True:
 
-    #subprocess.call("cls", shell = True)
+    #os.system('cls')
+    lista = odczyt()    #odczyt z pliku na samym początku aby reszta funkcji działała poprawnie a nie sypała błędami
 
-    print("Wybierz czynność, podając numer przy niej.\n"
+    print("\nWybierz czynność, podając numer przy niej.\n"
           "1. Pokaż liste.\n"
           "2. Dopisz do listy.\n"
           "3. Usuń z listy.\n"
-          "4. Wyszukaj daną osobę lub numer")
+          "4. Wyszukaj daną osobę lub numer.\n"
+          "5. Wyjście.\n")
 
     try:
         w = int(input("Numer operacji do wykonania: "))
 
         if w  == 1:
-            lista = odczyt()
+            
             for i in lista:
                 print(i)
 
-        #coś próbuje od tąd
         elif w == 2 :
             x = input(str('Wpisz imię: '))
             y = input(str('Wpisz numer telefonu: '))
@@ -86,9 +91,15 @@ while True:
             zapis(linia)
             print('pomyślnie dopisano do listy')
 
-             
-        #do tąd 
-        #NOWE!!!-nie trzeba poprawione
+        elif w == 3:
+            kasowanie(lista)
+
+        elif w == 5:
+            input("Wciśnij dowolny klawisz aby zamknąć.")
+            sys.exit(0)
+
+        else:
+            print("Podałeś za niewłaściwą liczbę.\nWpisz jeszcze raz.") 
 
 
     except Exception as e:
