@@ -5,7 +5,7 @@ def odczyt():
 
     try:
         tekst = []
-        tekst = open("lista.txt").readlines()  #scieżka bezwzględna gdzie u mnie plik ten występuje
+        tekst = open("lista.txt").readlines()
 
         return tekst
 
@@ -15,18 +15,54 @@ def odczyt():
 
         return blad
 
-#do poprawy, wyszukiwanie nie całości a części ciągu znaków
-def wyszukaj(im,nr,list):
+#wyszukiwanie po imieniu lub numerze-pełnych
+def wyszukaj(list):
 
-    l = len(list)
-    n = []
-    t = ("im"+"\t"+"nr")
+    print("Opcje wyszukiwania:\n"
+    "1. Wyszukaj po imieniu.\n"
+    "2. Wyszukaj po numerze telefonu.\n")
+    w = int(input("Numer wyboru: "))
 
-    for i in range(l):
-        if list[i] == t:
-            n.append(i)
+    wyniki =[]
 
-    return n
+    if w == 1:
+
+        imie = str(input("Podaj imie: "))
+
+        for i in list:
+
+            for j in range(len(i)):
+               if i[j] == '\t':
+                   wyniki.append(i)
+                   break
+               if i[j] != imie[j]:
+                 break
+
+    elif w == 2:
+
+        numer = str(input("Podaj numer: "))
+
+        for i in list:
+
+            n = len(numer)
+
+            for j in range(len(i),0,-1):
+                if i[j-2] == '\t':
+                    wyniki.append(i)
+                    break
+                if i[j-2] != numer[n-1]:
+                    break
+                n-=1
+    else:
+        print("Błędny znak lub niepasujący numer.")
+
+    if len(wyniki) == 0:
+        wyniki.append("Brak wyników wyszukiwania")
+
+    print("\nWyszukania:")
+    for i in wyniki:
+        print(i)
+
 
 def zapis(tekst):   #\n dodać
     try:
@@ -66,7 +102,7 @@ def kasowanie(list):
 
 while True:
 
-    #os.system('cls')
+    #os.system('CLS')
     lista = odczyt()    #odczyt z pliku na samym początku aby reszta funkcji działała poprawnie a nie sypała błędami
 
     print("\nWybierz czynność, podając numer przy niej.\n"
@@ -93,6 +129,9 @@ while True:
 
         elif w == 3:
             kasowanie(lista)
+
+        elif w == 4:    #dodano wyszukiwanie
+            wyszukaj(lista)
 
         elif w == 5:
             input("Wciśnij dowolny klawisz aby zamknąć.")
