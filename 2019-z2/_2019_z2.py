@@ -21,11 +21,11 @@ def wyszukaj(list):
     print("Opcje wyszukiwania:\n"
     "1. Wyszukaj po imieniu.\n"
     "2. Wyszukaj po numerze telefonu.\n")
-    w = int(input("Numer wyboru: "))
+    w = input("Numer wyboru: ")
 
     wyniki =[]
 
-    if w == 1:
+    if w == '1':
 
         imie = str(input("Podaj imie: "))
 
@@ -38,7 +38,7 @@ def wyszukaj(list):
                if i[j] != imie[j]:
                  break
 
-    elif w == 2:
+    elif w == '2':
 
         numer = str(input("Podaj numer: "))
 
@@ -123,7 +123,7 @@ while True:
         elif w == 2 :
             x = input(str('Wpisz imię: '))
             y = input(str('Wpisz numer telefonu: '))
-            linia = str('\n'+x+'\t'+y) #skrócenie zapisu twojego Rafał
+            linia = str(x+'\t'+y+'\n') #skrócenie zapisu twojego Rafał
             zapis(linia)
             print('pomyślnie dopisano do listy')
 
