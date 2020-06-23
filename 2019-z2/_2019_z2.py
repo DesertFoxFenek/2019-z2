@@ -108,7 +108,7 @@ while True:
 
     lista = odczyt()    #odczyt z pliku na samym początku aby reszta funkcji działała poprawnie a nie sypała błędami
 
-    print("\nWybierz czynność, podając numer przy niej.\n"
+    print("\nWybierz czynność, podając numer przy niej.\n\a"
           "1. Pokaż liste.\n"
           "2. Dopisz do listy.\n"
           "3. Usuń z listy.\n"
