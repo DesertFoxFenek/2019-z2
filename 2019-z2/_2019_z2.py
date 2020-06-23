@@ -1,6 +1,10 @@
 import os   #cls do czyszczenia ekranu
 import sys  #do użycia exit(0) w celu zakończeni programu
 
+def cls():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def odczyt():
 
     try:
@@ -86,7 +90,7 @@ def kasowanie(list):
 
     n = int(input("Podaj numer linii do usunięcia: "))
 
-    os.system('cls')   #czyszczenie konsoli
+    os.system('clear')   #czyszczenie konsoli
 
     t = list.pop(n-1)
     
@@ -102,7 +106,6 @@ def kasowanie(list):
 
 while True:
 
-    #os.system('CLS')
     lista = odczyt()    #odczyt z pliku na samym początku aby reszta funkcji działała poprawnie a nie sypała błędami
 
     print("\nWybierz czynność, podając numer przy niej.\n"
@@ -114,7 +117,7 @@ while True:
 
     try:
         w = int(input("Numer operacji do wykonania: "))
-
+        cls()
         if w  == 1:
             
             for i in lista:
