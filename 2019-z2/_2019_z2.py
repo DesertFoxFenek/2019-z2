@@ -90,8 +90,6 @@ def kasowanie(list):
 
     n = int(input("Podaj numer linii do usunięcia: "))
 
-    os.system('clear')   #czyszczenie konsoli
-
     t = list.pop(n-1)
     
     try:
@@ -108,12 +106,15 @@ while True:
 
     lista = odczyt()    #odczyt z pliku na samym początku aby reszta funkcji działała poprawnie a nie sypała błędami
 
-    print("\nWybierz czynność, podając numer przy niej.\n\a"
+    print("Program ma na celu zarządzanie listą osób z ich numerami.\n"
+          "Umożliwia on zobaczenie całej listy, dopisanie lub usunięcie rekordu oraz wyszukiwanie po imieniu lub numerze.\n"
+          "\nWybierz czynność, podając numer przy niej.\n\a"
           "1. Pokaż liste.\n"
           "2. Dopisz do listy.\n"
           "3. Usuń z listy.\n"
           "4. Wyszukaj daną osobę lub numer.\n"
-          "5. Wyjście.\n")
+          "5. Wyjście.\n"
+          "6. Autorzy, informacje o programie i środowisku tworzenia.\n")
 
     try:
         w = int(input("Numer operacji do wykonania: "))
@@ -124,9 +125,9 @@ while True:
                 print(i)
 
         elif w == 2 :
-            x = input(str('Wpisz imię: '))
-            y = input(str('Wpisz numer telefonu: '))
-            linia = str(x+'\t'+y+'\n') #skrócenie zapisu twojego Rafał
+            im = input(str('Wpisz imię: '))
+            nr = input(str('Wpisz numer telefonu: '))
+            linia = str(im+'\t'+nr+'\n') #skrócenie zapisu twojego Rafał
             zapis(linia)
             print('pomyślnie dopisano do listy')
 
@@ -140,10 +141,29 @@ while True:
             input("Wciśnij dowolny klawisz aby zamknąć.")
             sys.exit(0)
 
+        elif w == 6:
+            print("Autorzy: \n"
+                  "Pomysł i projekt wstępny:                Dominik Lisiecki oraz Rafał Kęszycki\n"
+                  "Kod:                                     Dominik Lisiecki oraz Rafał Kęszycki\n"
+                  "Korekty kodu oraz kontrola błędów:       Dominik Lisiecki oraz Rafał Kęszycki\n"
+                  "Testy pełne:                             Dominik Lisiecki oraz Rafał Kęszycki\n"
+                  "Testy jednostkowe:                       Dominik Lisiecki\n"
+                  "Pomysł na opis programu PDF:             Rafał Kęszycki\n"
+                  "Opis programu:                           Rafał Kęszycki\n"
+                  "Poprawki merytoryczne w opisie:          Dominik Lisiecki oraz Rafał Kęszycki\n\n"
+                  "Znane błędy: \n"
+                  "Wyszukiwanie pozwala na zdublowanie ostatniego wyrazu, a i tak znajdzie\nrekord, który miał by być normalnie bez literówki.\n\n"
+                  "Środowisko użytkownika: \n"
+                  "System operacyjny-główny:                Microsoft Windows 10 Pro 19041.329\n"
+                  "System pomocniczy do testów:             Ubuntu 20.04\n"
+                  "Usługa maszyny wirtualnej:               Microsoft Hyper-V 10.0.19041.1\n"
+                  "Środowisko programistyczne:              Microsoft Visual Studio Community 2019 16.0.1\n"
+                  "Język programowania:                     Python v3.7 (64-bit)\n")
+            input()
+
         else:
             print("Podałeś za niewłaściwą liczbę.\nWpisz jeszcze raz.") 
 
 
     except Exception as e:
         print("Błąd:",e)
-
