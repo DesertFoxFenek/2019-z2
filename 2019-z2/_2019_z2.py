@@ -67,6 +67,9 @@ def wyszukaj(list):
     for i in wyniki:
         print(i)
 
+    input("Wciśnij dowolny klawisz aby przejść dalej.")
+    cls()
+
 
 def zapis(tekst):   #\n dodać
     try:
@@ -90,6 +93,8 @@ def kasowanie(list):
 
     n = int(input("Podaj numer linii do usunięcia: "))
 
+    cls()
+
     t = list.pop(n-1)
     
     try:
@@ -97,6 +102,9 @@ def kasowanie(list):
         plik.writelines(list)
         plik.close()
         print ("Skasowano.",t)
+
+        input("\nWciśnij dowolny klawisz aby wrócić do wyboru opcji.")
+        cls()
 
     except Exception as e:
 
@@ -124,6 +132,9 @@ while True:
             for i in lista:
                 print(i)
 
+            input("Wciśnij dowolny klawisz aby zamknąć.")
+            cls()
+
         elif w == 2 :
             im = input(str('Wpisz imię: '))
             nr = input(str('Wpisz numer telefonu: '))
@@ -138,7 +149,7 @@ while True:
             wyszukaj(lista)
 
         elif w == 5:
-            input("Wciśnij dowolny klawisz aby zamknąć.")
+            input("Wciśnij dowolny klawisz aby zakończyć działanie programu.")
             sys.exit(0)
 
         elif w == 6:
@@ -149,17 +160,17 @@ while True:
                   "Testy pełne:                             Dominik Lisiecki oraz Rafał Kęszycki\n"
                   "Testy jednostkowe:                       Dominik Lisiecki\n"
                   "Pomysł na opis programu PDF:             Rafał Kęszycki\n"
-                  "Opis programu:                           Rafał Kęszycki\n"
-                  "Poprawki merytoryczne w opisie:          Dominik Lisiecki oraz Rafał Kęszycki\n\n"
+                  "Opis programu:                           Dominik Lisiecki oraz Rafał Kęszycki\n"
                   "Znane błędy: \n"
                   "Wyszukiwanie pozwala na zdublowanie ostatniego wyrazu, a i tak znajdzie\nrekord, który miał by być normalnie bez literówki.\n\n"
                   "Środowisko użytkownika: \n"
                   "System operacyjny-główny:                Microsoft Windows 10 Pro 19041.329\n"
                   "System pomocniczy do testów:             Ubuntu 20.04\n"
                   "Usługa maszyny wirtualnej:               Microsoft Hyper-V 10.0.19041.1\n"
-                  "Środowisko programistyczne:              Microsoft Visual Studio Community 2019 16.0.1\n"
+                  "Środowisko programistyczne:              Microsoft Visual Studio Community 2019 16.0.1 oraz 16.0.2\n"
                   "Język programowania:                     Python v3.7 (64-bit)\n\n")
-            input("Wciśnij dowolny klawisz aby zamknąć.")
+            input("Wciśnij dowolny klawisz aby przejść do menu wyboru.")
+            cls()
 
         else:
             print("Podałeś za niewłaściwą liczbę.\nWpisz jeszcze raz.") 
