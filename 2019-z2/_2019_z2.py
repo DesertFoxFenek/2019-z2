@@ -158,8 +158,8 @@ while True:
                   "System pomocniczy do testów:             Ubuntu 20.04\n"
                   "Usługa maszyny wirtualnej:               Microsoft Hyper-V 10.0.19041.1\n"
                   "Środowisko programistyczne:              Microsoft Visual Studio Community 2019 16.0.1\n"
-                  "Język programowania:                     Python v3.7 (64-bit)\n")
-            input()
+                  "Język programowania:                     Python v3.7 (64-bit)\n\n")
+            input("Wciśnij dowolny klawisz aby zamknąć.")
 
         else:
             print("Podałeś za niewłaściwą liczbę.\nWpisz jeszcze raz.") 
